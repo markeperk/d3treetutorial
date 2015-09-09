@@ -3,13 +3,13 @@
 
 **Understanding Diagonals**
 
-1. Create a canvas
+1. Create a canvas <br>
 	```
 		var canvas = d3.select("body").append("svg")
 			.attr("width", 500)
 			.attr("height", 500);
 	```
-2. Variable declaration of diagonal
+2. Variable declaration of diagonal <br>
 	```
 		var diagonal = d3.svg.diagonal()
 	```
