@@ -45,16 +45,16 @@
 	d3.json("data.json", function(data) {
 	})
 ```
-- Remember that tree layouts are "tidy" and have 3 characteristics - labels/text, circles/nodes, and paths/links. Let's start by declaring variables for both your nodes and links and utilize some of d3's tree methods with our linked data. 
+- Remember that tree layouts are "tidy" and have 3 characteristics - labels/text, circles/nodes, and paths/links. Let's start by declaring variables for both your nodes and links and utilize their respective d3 methods with our linked data. 
 ```
 	var nodes = tree.nodes(data); 
 ```
-	*The "nodes" returns an array of all of the nodes - the structure and data information needed to utilize and place the layout*
+*The "nodes" returns an array of all of the nodes - the structure and data information needed to utilize and place the layout*
 
 ```
 	var links = tree.links(nodes) 
 ```
-	*The "links" variable is the path between each node - expects input in the format of nodes (each link will have a source and target property)*
+*The "links" variable is the path between each node - expects input in the format of nodes (each link will have a source and target property)*
 
 - Create a group element that will hold the data together. We then use it to place them on the screen according to their relative positions. Use transform to "translate" with their respective coordinates
 ```
@@ -84,7 +84,7 @@
 - Use paths to create linkage between each node
 ```
 	canvas.selectAll(".link")
-		.data(links) //bind the data
+		.data(links)
 		.enter()
 		.append("path")
 		.attr("class", "link")
