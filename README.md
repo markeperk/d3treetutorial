@@ -47,50 +47,50 @@
 ```
 - Remember that tree layouts are "tidy" and have 3 characteristics - labels/text, circles/nodes, and paths/links. Let's start by declaring variables for both your nodes and links and utilize some of d3's tree methods with our linked data. 
 ```
-			var nodes = tree.nodes(data); 
+	var nodes = tree.nodes(data); 
 ```
-The "nodes" returns an array of all of the nodes - the structure and data information needed to utilize and place the layout
+	*The "nodes" returns an array of all of the nodes - the structure and data information needed to utilize and place the layout*
 
 ```
-			var links = tree.links(nodes) 
+	var links = tree.links(nodes) 
 ```
-The "links" variable is the path between each node - expects input in the format of nodes (each link will have a source and target property)
+	*The "links" variable is the path between each node - expects input in the format of nodes (each link will have a source and target property)*
 
 - Create a group element that will hold the data together. We then use it to place them on the screen according to their relative positions. Use transform to "translate" with their respective coordinates
 ```
-			var node = canvas.selectAll(".node")
-				.data(nodes)
-				.enter() 
-				.append("g")
-					.attr("class", "node")
-					.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"})
+	var node = canvas.selectAll(".node")
+		.data(nodes)
+		.enter() 
+		.append("g")
+			.attr("class", "node")
+			.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"})
 ```
 - Now we're ready to append things to each node's "g" element. Begin by giving a shape to your node.
 ```
-			node.append("circle")
-				.attr("r", 5)
-				.attr("fill", "gray")
+	node.append("circle")
+		.attr("r", 5)
+		.attr("fill", "gray")
 ```
 - Time to add labels to each node. Utilize your data object to customize each node name.
 ```
-			node.append("text")
-				.text(function(d) { return d.name; })
-				.attr("font-size", 12)
+	node.append("text")
+		.text(function(d) { return d.name; })
+		.attr("font-size", 12)
 ```
 - Don't forget to declare your diagonal variable so that you use the coordinates created in your "links" variable and connect each node.
 ```
-			var diagonal = d3.svg.diagonal()
+	var diagonal = d3.svg.diagonal()
 ```
 - Use paths to create linkage between each node
 ```
-			canvas.selectAll(".link")
-				.data(links) //bind the data
-				.enter()
-				.append("path")
-				.attr("class", "link")
-				.attr("fill", "none")
-				.attr("stroke", "gray")
-				.attr("d", diagonal);
+	canvas.selectAll(".link")
+		.data(links) //bind the data
+		.enter()
+		.append("path")
+		.attr("class", "link")
+		.attr("fill", "none")
+		.attr("stroke", "gray")
+		.attr("d", diagonal);
 ```
 - Make sure that your layout code is all within your "data" function!
 
