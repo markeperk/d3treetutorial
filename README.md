@@ -49,7 +49,7 @@
 ```
 	var nodes = tree.nodes(data); 
 ```
-*The "nodes" returns an array of all of the nodes - the structure and data information needed to utilize and place the layout*
+*The "nodes" variable returns an array of all of the nodes - the structure and data information needed to utilize and place each in the layout*
 
 ```
 	var links = tree.links(nodes) 
@@ -92,6 +92,6 @@
 		.attr("stroke", "gray")
 		.attr("d", diagonal);
 ```
-- Make sure that your layout code is all within your "data" function!
+- Make sure that the appropriate code is within your "data" function!
 
 **That's it!**
