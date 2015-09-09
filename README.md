@@ -32,13 +32,13 @@
 - Create (or modify) your canvas 
 ```
 	var canvas = d3.select("body").append("svg")
-		.attr("width", 500)
-		.attr("height", 500);
+		.attr("width", 1200)
+		.attr("height", 1000);
 ```
 - Contain your tree layout within a new variable (since layouts are both functions and objects, there are a number of things you can do to customize them like assign a size)
 ```
 	var tree = d3.layout.tree()
-		.size([1100, 400])
+		.size([1100, 900])
 ```
 - Link a set of data to the layout. 
 ```
