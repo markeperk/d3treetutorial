@@ -29,13 +29,13 @@
 
 **Creating a tree layout**
 
-- Create (or modify) your canvas. Utilize a group element and translation transform, to push the whole g group over and down by some amount.
+- Create (or modify) your canvas. Utilize a group element and translation transform, to push the whole g group over and down by some amount for better visibilityç.
 ```
 	var canvas = d3.select("body").append("svg")
 		.attr("width", 1200)
 		.attr("height", 1000)
 		.append("g")
-			.attr("transform", "translate(50, 50)");
+			.attr("transform", "translate(20, 50)");
 ```
 - Contain your tree layout within a new variable (since layouts are both functions and objects, there are a number of things you can do to customize them like assign a size)
 ```
